@@ -1,0 +1,60 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+    id 'java'
+}
+
+group = 'geo'
+version = '0.1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    
+    //Hibernate
+    implementation 'org.hibernate:hibernate-core'
+    implementation 'org.hibernate:hibernate-entitymanager'
+ 
+    // embedded derby
+    implementation 'org.apache.derby:derby:10.14.2.0'
+    
+        //Hikari
+    implementation 'com.zaxxer:HikariCP:3.2.0'
+    
+   // implementation 'org.springframework.boot:spring-boot-starter-security'
+   // implementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.session:spring-session-core'
+   
+   // https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2
+  // implementation 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
+   // https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs
+   // implementation 'org.springframework.security:spring-security-taglibs:5.2.1.RELEASE'
+   
+   
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-root
+  //  implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+ //   runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2', 'io.jsonwebtoken:jjwt-jackson:0.11.2' 
+   
+   
+   
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+bootJar {
+    baseName = 'nominatim-test'
+    version =  '0.1.0'
+}
+
